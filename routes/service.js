@@ -44,6 +44,16 @@ async function processUrl(reqBody, callback) {
     }
 }
 
+async function getUrl(reqBody, callback) {
+    const url = await Url.findOne({ urlCode: reqBody.id });
+    if (url) {
+        callback({ success: true, url: url.longUrl });
+    } else {
+        callback({ success: false });
+    }
+}
+
 module.exports = {
-    processUrl
+    processUrl,
+    getUrl
 }
