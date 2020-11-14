@@ -10,6 +10,9 @@ app.use(morgan('dev'));
 
 connectDB();
 
+app.use('/', require('./routes/index'));
+app.use('/api/v1/url', require('./routes/url'));
+
 app.use(express.json({ extended: false }));
 
 const PORT = 3000;
