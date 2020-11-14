@@ -1,12 +1,17 @@
 const express = require('express'),
     app = express(),
     morgan = require('morgan'),
-    helmet = require('helmet');
+    helmet = require('helmet'),
+    bodyParser = require('body-parser');
+
 
 const { connectDB } = require('./config/db');
 
 app.use(helmet());
 app.use(morgan('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json()); // req.body
 
 connectDB();
 
