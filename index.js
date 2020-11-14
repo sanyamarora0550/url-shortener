@@ -1,0 +1,18 @@
+const express = require('express'),
+    app = express(),
+    morgan = require('morgan'),
+    helmet = require('helmet');
+
+const { connectDB } = require('./config/db');
+
+app.use(helmet());
+app.use(morgan('dev'));
+
+connectDB();
+
+app.use(express.json({ extended: false }));
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log('Server Started...');
+});
