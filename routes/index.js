@@ -18,4 +18,8 @@ router.get('/:id', async (req, res) => {
     }
 });
 
+router.get('/', async (req, res) => {
+    res.send("Welcome to Heroku!!!");
+});
+
 module.exports = router;
