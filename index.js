@@ -20,7 +20,8 @@ app.use('/api/v1/url', require('./routes/url'));
 
 app.use(express.json({ extended: false }));
 
-const PORT = 3000;
+var PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
     console.log('Server Started...');
 });
