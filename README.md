@@ -12,5 +12,5 @@
 
 ## Quick Start
 
-$ git clone https://github.com/sanyamarora0550/url-shortner.git
-$ npm i
+> $ git clone https://github.com/sanyamarora0550/url-shortner.git
+> $ npm i
